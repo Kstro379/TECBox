@@ -8,7 +8,7 @@ namespace  Employees.Models
         public string Password { get; set; }
         public string Date_Admission { get; set; }
         public string Birthdate { get; set; }
-        public float Monthly_Salary { get; set; }
+        public float Hour_Salary { get; set; }
         public string Branch_Office { get; set; }
     }
     
