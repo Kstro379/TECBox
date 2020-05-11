@@ -1,4 +1,4 @@
-namespace Packages.cs.Models
+namespace Packages.Models
 {
     public class Package
     {

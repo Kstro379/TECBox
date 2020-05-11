@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Packages.cs.Models;
+using Packages.Models;
 
 namespace Packages.Data
 {
