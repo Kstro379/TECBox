@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Branch_Offices.Data;
 using Branch_Offices.Models;
+using System;
 
 namespace Branch_Offices.Controllers
 {
@@ -26,6 +27,17 @@ namespace Branch_Offices.Controllers
             var Branch_OfficeItems = _repository.GetCommandById(id);
 
             return Ok(Branch_OfficeItems);
+        }
+
+        //GET api/commands
+        [HttpPost]
+        public ActionResult <Branch_Office> CreateCommand(Branch_Office createBranch_Officer)
+        {
+            
+            _repository.CreateBranch_Officer(createBranch_Officer);
+            
+
+            return Ok(createBranch_Officer);
         }
     }
 }

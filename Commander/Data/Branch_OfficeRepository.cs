@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Branch_Offices.Models;
 
@@ -16,6 +17,15 @@ namespace Branch_Offices.Data
             };
         }
 
+        public void CreateBranch_Officer(Branch_Office cmd)
+        {
+            if(cmd == null)
+            {
+                throw new ArgumentNullException(nameof(cmd));
+            }
+
+            branch_offices.Add(cmd);
+        }
         public IEnumerable<Branch_Office> GetAppCommands()
         {
             return branch_offices;
