@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TECBoxAPI.Services.Models;
@@ -10,6 +11,7 @@ namespace TECBoxAPI.Services.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class RoleController : ControllerBase
     {
 
@@ -58,7 +60,7 @@ namespace TECBoxAPI.Services.Controllers
         }
 
         [HttpDelete("{name}")]
-        public async Task<ActionResult<List<UserEntity>>> Delete(string name)
+        public async Task<ActionResult<List<Role>>> Delete(string name)
         {
             var listRoles = await GetListRoles();
 
