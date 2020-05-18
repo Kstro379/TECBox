@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row fixed-top" style="background-color: #54ec7a">
+        <div class="col-1">LOGO</div>
+        <div class="col-6"></div>
+        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <form (submit)="actualizar(userNameComplete, userDni,userCorreo,userCasillero,userCelular,userCasa,userName,userPass,userProvincia,userCanton,userDistrito,userSenas)">
+                <br>
+                <p>Nombre</p>
+                <input type="text" #userNameComplete>
+                <br>
+                <p>Dni</p>
+                <input type="text" #userDni>
+                <br>
+                <p>Correo electrónico</p>
+                <input type="text" #userCorreo>
+                <br>
+                <p>Casillero</p>
+                <input type="text" #userCasillero>
+                <br>
+                <p>Telefono Celular</p>
+                <input type="text" #userCelular>
+                <br>
+                <p>Telefono de la casa</p>
+                <input type="text" #userCasa>
+                <br>
+                <p>Username</p>
+                <input type="text" #userName>
+                <br>
+                <p>Passward</p>
+                <input type="text" #userPass>
+                <br>
+                <br>
+                <p>Direccion de entrega</p>
+                <p>Provincia</p>
+                <input type="text" #userProvincia>
+                <p>Canton</p>
+                <input type="text" #userCanton>
+                <p>Distrito</p>
+                <input type="text" #userDistrito>
+                <p>Otras señas</p>
+                <input type="text" #userSenas>
+                <br><br><br>
+                <button>
+                  Actualizar
+                </button>
+                <br>
+              </form>
+        </div>
+    </div>
+</div>
