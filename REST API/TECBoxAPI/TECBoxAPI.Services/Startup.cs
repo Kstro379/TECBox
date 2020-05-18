@@ -31,10 +31,22 @@ namespace TECBoxAPI.Services
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.AllowAnyMethod());
+            app.UseCors(options => options.AllowAnyHeader());
+            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors(options => options.AllowCredentials());
+            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseHttpsRedirection();
+
+            app.UseCors("AllowOrigin");
 
             app.UseHttpsRedirection();
 

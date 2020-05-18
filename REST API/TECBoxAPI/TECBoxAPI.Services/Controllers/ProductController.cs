@@ -11,7 +11,7 @@ namespace TECBoxAPI.Services.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
+    
     public class ProductController : ControllerBase
     {
 

@@ -10,7 +10,7 @@ namespace TECBoxAPI.Services.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
+    
     public class Branch_OfficerController : ControllerBase
     {
 
