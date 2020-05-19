@@ -89,7 +89,8 @@ namespace TECBoxAPI.Services.Controllers
             var listBranch_Officer = new List<Branch_Office>()
             {
                new Branch_Office{Name="Cartago",PhoneNumber=25552134, In_charge="Olman Castro", Province="Cartago", Canton="Cartago", District="Cartago Occidental", Address="100 metros sur del las Ruinas"},
-               new Branch_Office{Name="Heredia", PhoneNumber=27610819, In_charge="Randal Solana", Province="Heredia", Canton="Srapiquí", District="La virgen", Address="Contiguo al Banco Nacional"}
+               new Branch_Office{Name="Heredia", PhoneNumber=27610819, In_charge="Randal Solano", Province="Heredia", Canton="Srapiquí", District="La virgen", Address="Contiguo al Banco Nacional"},
+               new Branch_Office{Name="Alajuela", PhoneNumber=27610819, In_charge="Brayn Cespedes", Province="Alajuela", Canton="Alajuela", District="Alajuela", Address="Diagonal al parque"}
             };
 
             return listBranch_Officer;

@@ -3,6 +3,7 @@ namespace TECBoxAPI.Services.Models
     public class Employee
     {
         public int Dni { get; set; }
+        public string UserName { get; set; }
         public string Name { get; set; }
         public string Last_Name { get; set; }
         public string Password { get; set; }

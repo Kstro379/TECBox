@@ -77,9 +77,9 @@ namespace TECBoxAPI.Services.Controllers
         {
             var listRoutes = new List<Route>()
             {
-               new Route{Id=0, District="La Virgen"},
-               new Route{Id=1, District="San Ramón"},
-               new Route{Id=2, District="Cartago"}
+               new Route{Id=0, District="Horquetas"},
+               new Route{Id=1, District="San Ramón Central"},
+               new Route{Id=2, District="Cartago Oriental"}
             };
 
             return listRoutes;
