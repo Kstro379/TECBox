@@ -34,7 +34,8 @@ namespace TECBoxAPI.Services.Controllers
             listRoutes.Add(new Route()
             {
                 Id = listRoutes.Count + 1,
-                District = route.District
+                District = route.District,
+                Name = route.Name
 
             });
 
@@ -52,7 +53,8 @@ namespace TECBoxAPI.Services.Controllers
                 return NotFound();
 
             listRoutes.First(u => u.Id == routeUpdate.Id).District = route.District;
-          
+            listRoutes.First(u => u.Id == routeUpdate.Id).Name = route.Name;
+
             return listRoutes;
         }
 
@@ -77,9 +79,9 @@ namespace TECBoxAPI.Services.Controllers
         {
             var listRoutes = new List<Route>()
             {
-               new Route{Id=0, District="Horquetas"},
-               new Route{Id=1, District="San Ramón Central"},
-               new Route{Id=2, District="Cartago Oriental"}
+               new Route{Id=0, Name = "Sarapiquí", District = new string[] {"Horquetas", "La virgen", "Puerto Viejo"} },
+               new Route{Id=1, Name = "San Ramón Central", District = new string[] {"San Ramón Central", "San Rafael", "Samora" } },
+               new Route{Id=2, Name = "Cartago Oriental", District = new string[] {"Cartago Oriental", "Los Angeles", "San Blas" } }
             };
 
             return listRoutes;

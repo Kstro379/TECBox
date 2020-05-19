@@ -91,16 +91,16 @@ namespace TECBoxAPI.Services.Controllers
         {
             var listPakages = new List<Package>()
             {
-               new Package{Tracking_Id=0, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=1, Dni_Client=207840516, Dni_Employee=27840876,},
-               new Package{Tracking_Id=1, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=2, Dni_Client=307840671, Dni_Employee=27840876,},
-               new Package{Tracking_Id=2, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/03/2020", Deliver_Date="12/04/2020", Id_Route=1, Dni_Client=207840516, Dni_Employee=27840876,},
-               new Package{Tracking_Id=3, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/04/2020", Deliver_Date="12/05/2020", Id_Route=2, Dni_Client=307840671, Dni_Employee=27840876,},
-               new Package{Tracking_Id=4, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/04/2020", Deliver_Date="12/05/2020", Id_Route=1, Dni_Client=207840516, Dni_Employee=27840876,},
-               new Package{Tracking_Id=5, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=2, Dni_Client=307840671, Dni_Employee=506780345},
-               new Package{Tracking_Id=6, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2020", Deliver_Date="12/02/2020", Id_Route=1, Dni_Client=207840516, Dni_Employee=506780345},
-               new Package{Tracking_Id=7, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2022", Deliver_Date="12/02/2020", Id_Route=2, Dni_Client=307840671, Dni_Employee=506780345},
-               new Package{Tracking_Id=8, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2021", Deliver_Date="12/02/2020", Id_Route=1, Dni_Client=207840516, Dni_Employee=506780345},
-               new Package{Tracking_Id=9, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2020", Deliver_Date="12/02/2020", Id_Route=2, Dni_Client=307840671, Dni_Employee=506780345}
+               new Package{Tracking_Id=0, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=1, District="San Ramón Central", Dni_Client=207840516, Dni_Employee=27840876,},
+               new Package{Tracking_Id=1, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=2, District="Cartago Oriental", Dni_Client=307840671, Dni_Employee=27840876,},
+               new Package{Tracking_Id=2, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/03/2020", Deliver_Date="12/04/2020", Id_Route=1, District="San Rafael", Dni_Client=207840516, Dni_Employee=27840876,},
+               new Package{Tracking_Id=3, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/04/2020", Deliver_Date="12/05/2020", Id_Route=2, District="San Blas", Dni_Client=307840671, Dni_Employee=27840876,},
+               new Package{Tracking_Id=4, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/04/2020", Deliver_Date="12/05/2020", Id_Route=1, District="San Rafael", Dni_Client=207840516, Dni_Employee=27840876,},
+               new Package{Tracking_Id=5, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/02/2020", Deliver_Date="12/03/2020", Id_Route=2, District="San Blas", Dni_Client=307840671, Dni_Employee=506780345},
+               new Package{Tracking_Id=6, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2020", Deliver_Date="12/02/2020", Id_Route=1, District="Samora", Dni_Client=207840516, Dni_Employee=506780345},
+               new Package{Tracking_Id=7, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2022", Deliver_Date="12/02/2020", Id_Route=2, District="Los Angeles", Dni_Client=307840671, Dni_Employee=506780345},
+               new Package{Tracking_Id=8, Status= "Listo para Entrega", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2021", Deliver_Date="12/02/2020", Id_Route=1,  District="San Ramón Central", Dni_Client=207840516, Dni_Employee=506780345},
+               new Package{Tracking_Id=9, Status= "Entregado al cliente", Description="Es un paquete de sumo cuidado", Initial_Date="10/01/2020", Deliver_Date="12/02/2020", Id_Route=2, District="Cartago Oriental", Dni_Client=307840671, Dni_Employee=506780345}
             };
 
             return listPakages;
