@@ -44,6 +44,16 @@ namespace TECBoxAPI.Services.Controllers
             return client;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Client>> GetDni(int id)
+        {
+            var listClients = await GetListClients();
+
+            var clientGet = listClients.Find(u => u.Dni == id);
+
+            return clientGet;
+        }
+
         [HttpPost]
         public async Task<ActionResult<List<Client>>> Post(Client client)
         {
