@@ -4,7 +4,7 @@ namespace TECBoxAPI.Services.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public int Dni_Employee { get; set; }
+        public int[] Dni_Employee { get; set; }
         
     }
 }

@@ -111,7 +111,8 @@ namespace TECBoxAPI.Services.Controllers
             var listEmployees = new List<Employee>()
             {
                new Employee{Dni=27840876, UserName = "trabajador1", Password="trabajador1", Name="Oscar", Last_Name="Rodrigues", Date_Admission="12/12/2010", Birthdate="10/10/1987", Hour_Salary=3000, Branch_Office="Cartago"},
-               new Employee{Dni=506780345, UserName= "trabajador2", Password="trabajador2", Name="Daniel", Last_Name="Martinez", Date_Admission="04/04/2019", Birthdate="02/02/1991", Hour_Salary=2000, Branch_Office="Heredia"}
+               new Employee{Dni=506780345, UserName= "trabajador2", Password="trabajador2", Name="Daniel", Last_Name="Martinez", Date_Admission="04/04/2019", Birthdate="02/02/1991", Hour_Salary=2000, Branch_Office="Heredia"},
+               new Employee{Dni=401580278, UserName= "trabajador3", Password="trabajador3", Name="Lufy", Last_Name="D.", Date_Admission="04/01/2019", Birthdate="02/08/1991", Hour_Salary=200000, Branch_Office="Cartado"}
             };
 
             return listEmployees;
