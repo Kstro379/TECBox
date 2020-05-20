@@ -1,0 +1,189 @@
+<!-- Header para cualquiera de las vistas -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="page-header">
+        <h1 class="text-center" id="pageName">{{ pageName }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+</div>
+
+<!--Contenedor de la barra negra...-->
+<div class="container">
+  <!-- Mensaje de alerta -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de los empleados en la sucursal -->
+<div class="container">
+  <!-- Encabezado de la tabla -->
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="col-md-2">
+          <button type="button" class="btn" onclick="location.href=''">
+            <img src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="return-button" width="22" />
+          </button>
+        </div>
+        <!--Label de fechas -->
+        <div class="form-group col-md-4">
+          <label></label>
+          <input
+            required
+            ngModel
+            type="date"
+            name="startDate"
+            #startDate="ngModel"
+            max="3000-12-31"
+            min="1000-01-01"
+            class="form-control"
+            id="startDate"
+          />
+          <div class="alert alert-danger" *ngIf="startDate.touched && !startDate.valid">
+            Debe ingresar una fecha válida.
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label></label>
+          <input
+            required
+            ngModel
+            type="date"
+            name="finalDate"
+            #finalDate="ngModel"
+            min="1000-01-01"
+            max="3000-12-31"
+            class="form-control"
+            id="finalDate"
+          />
+          <div class="alert alert-danger" *ngIf="finalDate.touched && !finalDate.valid">
+            Debe ingresar una fecha válida.
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--Columna de alerta-->
+    <div class="alert alert-warning col-md-12" *ngIf="warning">
+      Debe de especificar un rango de fechas para mostrar los paquetes entregados
+      <button class="btn btn-warning" (click)="rigth()">De acuerdo</button>
+    </div>
+  </div>
+  <!-- Tabla de emplados de la sucursal, aún por finalizar -->
+  <table *ngIf="selected" class="table table-hover" data-sort-order="desc">
+    <thead>
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Provedor</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Monto</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allSpeding == sucursal && startDate.valid && finalDate.valid">
+      <tr *ngFor="let data of spendingData">
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value)
+          "
+        >
+          {{ data.fecha }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value)
+          "
+        >
+          {{ data.proveedor }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value)
+          "
+        >
+          {{ data.descripcion }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value)
+          "
+        >
+          {{ data.monto }}
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="allSpeding != sucursal && startDate.valid && finalDate.valid">
+      <tr *ngFor="let data of spendingData">
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value) &&
+            data.sucursal == sucursal
+          "
+        >
+          {{ data.fecha }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value) &&
+            data.sucursal == sucursal
+          "
+        >
+          {{ data.proveedor }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value) &&
+            data.sucursal == sucursal
+          "
+        >
+          {{ data.descripcion }}
+        </td>
+        <td
+          class="align-middle"
+          *ngIf="
+            convertDate(data.fecha) >= convertDate(startDate.control.value) &&
+            convertDate(data.fecha) <= convertDate(finalDate.control.value) &&
+            data.sucursal == sucursal
+          "
+        >
+          {{ data.monto }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
