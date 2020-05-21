@@ -1,13 +1,47 @@
-<div class="container">
-    <div class="row fixed-top" style="background-color: #54ec7a">
-        <div class="col-1">LOGO</div>
-        <div class="col-6"></div>
-        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
-        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
-        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
-        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
-        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+<!-- Barra principal de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">TECBox</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="col-4"></div>
+    <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+    <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+    <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+    <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+    <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-info my-2 my-sm-0"
+          type="submit"
+          routerLink="/login"
+          routerLinkActive="active"
+        >
+          Buscar
+        </button>
+      </form>
     </div>
+  </nav>
+
+<div class="container">
     <br>
 
     <div class="row">
