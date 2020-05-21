@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row fixed-top" style="background-color: #54ec7a">
+        <div class="col-1">LOGO</div>
+        <div class="col-6"></div>
+        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-4 producto" *ngFor="let product of products">
+            <br><p>Nombre del producto:<br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
+            <button (click)="agregar(product.code)">
+                Agregar a Mi Carrito
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+    <br>
+    <h1>Bienvenido nuevo cliente</h1>
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form (submit)="actualizar()">
+                <br>
+                <p>Nombre</p>
+                <input type="text" name="name" [(ngModel)]="user.name">
+                <br>
+                <p>Apellidos</p>
+                <input type="text" name="last" [(ngModel)]="user.last_Name">
+                <br>
+                <p>Dni</p>
+                <input type="text" name="dni" [(ngModel)]="user.dni">
+                <br>
+                <p>Correo electrónico</p>
+                <input type="text" name="correo" [(ngModel)]="user.email">
+                <br>
+                <p>Casillero</p>
+                <input type="text" name="casillero" [(ngModel)]="user.locker">
+                <br>
+                <p>Telefono Celular</p>
+                <input type="text" name="celular" [(ngModel)]="user.phoneNumber">
+                <br>
+                <p>Telefono de la casa</p>
+                <input type="text" name="casa" [(ngModel)]="user.house_PhoneNumber">
+                <br>
+                <p>Username</p>
+                <input type="text" name="user" [(ngModel)]="user.user">
+                <br>
+                <p>Passward</p>
+                <input type="text"name="pass" [(ngModel)]="user.password">
+                <br>
+                <br>
+                <p>Direccion de entrega</p>
+                <p>Provincia</p>
+                <input type="text" name="provincia" [(ngModel)]="user.province">
+                <p>Canton</p>
+                <input type="text" name="canton" [(ngModel)]="user.canton">
+                <p>Distrito</p>
+                <input type="text" name="distrito" [(ngModel)]="user.district">
+                <p>Otras señas</p>
+                <input type="text" name="senas" [(ngModel)]="user.address">
+                <br><br><br>
+                <button>
+                  Crear Nuevo Usuario
+                </button>
+                <br>
+              </form>
+        </div>
+    </div>
+</div>

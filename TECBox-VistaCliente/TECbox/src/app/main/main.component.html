@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8 vision">
+        Logo
+        <br>
+        <br>
+        <br>
+        <h2>Un titulo</h2>
+        <p>Un texto que hable de quienes somos y lo que hacemos</p>
+      </div>
+      <div class="col-4 inicio">
+        <form (submit)="confirm(userName, userPass)">
+          <br>
+          <p>Username</p>
+          <input type="text" #userName>
+          <br>
+          <br>
+          <br>
+          <p>Passward</p>
+          <input type="text" #userPass>
+          <br><br><br>
+          <button class="bot">
+            Iniciar
+          </button>
+          <br>
+        </form>
+      </div>
+      <button class="bot" [routerLink]="['/newUser']">
+        Crear cuenta
+      </button>
+    </div>
+  </div>
+  

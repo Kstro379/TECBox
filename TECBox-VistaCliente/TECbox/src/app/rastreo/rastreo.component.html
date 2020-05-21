@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row fixed-top" style="background-color: #54ec7a">
+        <div class="col-1">LOGO</div>
+        <div class="col-6"></div>
+        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+    </div>
+    <br>
+    <br>
+    <form (submit)="rastrear(paqueteId)">
+        <p>Ingrese el ID de su paquete</p>
+        <input type="text" #paqueteId>
+        <br>
+        <br>
+        <button>
+            Actualizar
+        </button>
+    </form>
+    <br>
+    <p>Estado:</p>
+    <h2>{{estado}}</h2>
+</div>
