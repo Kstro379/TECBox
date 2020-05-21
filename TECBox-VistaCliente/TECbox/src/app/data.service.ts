@@ -6,31 +6,45 @@ import { HttpClient,HttpParams } from '@angular/common/http'
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 
-  package(){
+  package() {
     return this.http.get('https://localhost:44395/api/Package');
   }
 
-  login(){
+  login() {
     return this.http.get('https://localhost:44395/api/Client');
   }
 
-  getUser(dni:string){
+  getUser(dni: string ) {
     return this.http.get('https://localhost:44395/api/Client/'+dni);
   }
 
-  loginRole(){
+  loginRole() {
     return this.http.get('https://localhost:44395/api/Role');
   }
 
-  loginEmployee(){
+  loginEmployee() {
     return this.http.get('https://localhost:44395/api/Employee');
   }
 
-  productos(){
+  productos() {
     return this.http.get('https://localhost:44395/api/Product');
   }
+
+  provincias() {
+    return this.http.get('https://ubicaciones.paginasweb.cr/provincias.json');
+  }
+
+  cantones(provincia: number) {
+    return this.http.get('https://ubicaciones.paginasweb.cr/provincia/' + provincia + '/cantones.json');
+  }
+
+  distritos(provincia: number, distrito: number) {
+    return this.http.get('https://ubicaciones.paginasweb.cr/provincia/' + provincia + '/canton/' + distrito + '/distritos.json');
+  }
+
+
 }

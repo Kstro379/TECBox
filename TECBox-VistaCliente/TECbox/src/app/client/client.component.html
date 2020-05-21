@@ -11,9 +11,15 @@
     <br>
 
     <div class="row">
-        <div class="col-4 producto" *ngFor="let product of products">
-            <br><p>Nombre del producto:<br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
-            <button (click)="agregar(product.code)">
+        <div class="card-body card-body-cascade text-center col-4 producto" *ngFor="let product of products">
+            <!-- Title -->
+            <h4 class="card-title">
+              <strong>Nombre del producto</strong>
+            </h4>
+            <!-- Text -->
+            <br><p><br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
+            <button type="button"
+            class="btn btn-primary"(click)="agregar(product.code)">
                 Agregar a Mi Carrito
             </button>
         </div>

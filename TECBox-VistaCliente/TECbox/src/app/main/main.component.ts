@@ -33,6 +33,7 @@ export class MainComponent implements OnInit {
         for (let x = 0; x < this.roles.length; x++) {
           for (let index = 0; index < this.roles[x].dni_Employee.length; index++) {
             if(this.roles[x].dni_Employee[index]==this.employees[i].dni){
+              this.router.navigate(['/administracion']);
               alert(this.roles[x].name);
               return false;
             }

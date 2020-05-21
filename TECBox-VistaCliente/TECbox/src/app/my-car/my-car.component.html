@@ -10,22 +10,34 @@
     </div>
     <br>
     <br>
-    <h1>Welcome</h1>
+    <h1 class="text-center text-info" >Carrito de compras</h1>
     <br>
-    <button (click)="actualizar()">
-        Actulizar
-    </button>
+    <div class="text-center">
+        <button class="btn btn-success" (click)="actualizar()">
+            Actulizar
+        </button>
+    </div>
     <br>
     <br>
     <div class="row">
-        <div class="col-4 producto" *ngFor="let product of products">
-            <br><p>Nombre del producto:<br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
-            <button (click)="del(product.code)">Eliminar</button>
+        <div class="card-body card-body-cascade text-center col-4 producto" *ngFor="let product of products">
+            <!-- Title -->
+            <h4 class="card-title">
+              <strong>Nombre del producto</strong>
+            </h4>
+            <!-- Text -->
+            <br><p><br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
+            <button class="btn btn-danger" (click)="del(product.code)">Eliminar</button>
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-6 float-left">Precio final</div>
-        <div class="col-6 float-right">{{total}}</div>
+        <div class="col-6 float-left">
+            <h4>Precio final</h4>
+        </div>
+        <div class="col-6 float-right">
+            <h4>{{total}}</h4>
+        </div>
+        <div id="header_line"></div>
     </div>    
 </div>

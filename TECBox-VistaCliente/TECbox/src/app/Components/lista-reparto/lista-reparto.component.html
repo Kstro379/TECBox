@@ -1,0 +1,108 @@
+<!-- Barra principal de navegación -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="administracion">TECBox</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Buscar"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+        routerLink="/login"
+        routerLinkActive="active"
+      >
+        Buscar
+      </button>
+    </form>
+  </div>
+</nav>
+
+<!-- Header para cualquiera de las vistas -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="page-header">
+        <h1 class="text-center" id="pageName">{{ pageName }}</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+</div>
+
+<!-- Lista de los empleados en la sucursal -->
+<div class="container">
+  <!-- Encabezado de la tabla -->
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="col-md-2">
+          <button type="button" class="btn" onclick="location.href='administracion'">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMrdnsfFgbp8dHFH5OcCaaFnVg4CEmabhtppXvwBz8B92OP9I3&usqp=CAU" alt="return-button" width="22" />
+          </button>
+        </div>
+        <div class="clearfix float-right"></div>
+        <div class="clearfix float-right">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+              Rutas
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item" *ngFor="let ruta of rutas">
+                <button class="dropdown-item" (click)="search(ruta.id)" type="button">{{ ruta.name }}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-info" (click)="print()">Imprimir</button>
+        </div>
+      </nav>
+    </div>
+    <!--Columna de alerta-->
+    <div class="alert alert-warning col-md-12" *ngIf="warning">
+      Debe selecionar una semana; en caso de no visualizar algún o ningún empleado, debe agregarlo en la vista de asignar horas
+      <button class="btn btn-warning" (click)="rigth()">De acuerdo</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <!-- Tabla de emplados de la sucursal, aún por finalizar -->
+  <table class="table table-hover" data-sort-order="desc" *ngIf="table">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Descripción de producto</th>
+        <th scope="col">Distrito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paquete of paquetes">
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.tracking_Id }}</td>
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.description }}</td>
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.district }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

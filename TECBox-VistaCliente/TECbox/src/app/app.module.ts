@@ -13,7 +13,14 @@ import { RastreoComponent } from './rastreo/rastreo.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 
+import { HomeAdministracionComponent } from './Components/home-administracion/home-administracion.component';
+import { GestionRolesComponent } from './Components/gestion-roles/gestion-roles.component';
+import { ListaEntregaComponent } from './Components/lista-entrega/lista-entrega.component';
+import { ListaProductosComponent } from './Components/lista-productos/lista-productos.component';
+import { ListaRepartoComponent } from './Components/lista-reparto/lista-reparto.component';
+
 import { DataService } from './data.service';
+import { from } from 'rxjs';
 
 const routes: Route[] = [
   {path: '', component: MainComponent},
@@ -32,7 +39,12 @@ const routes: Route[] = [
     MyCarComponent,
     RastreoComponent,
     ProfileComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    HomeAdministracionComponent,
+    GestionRolesComponent,
+    ListaEntregaComponent,
+    ListaProductosComponent,
+    ListaRepartoComponent
   ],
   imports: [
     BrowserModule,
