@@ -36,20 +36,16 @@ export class GestionRolesComponent implements OnInit {
   // Salida: ninguna
   Agregar(name: string, description: string) {
     console.log(name, description);
-    this._http.postRolData(name, description).subscribe((data) => {
-      this.roles = data;
-      alert('Rol Guardado');
-      console.log(data);
-    }, (error) => {
-      console.log(error);
-      alert('Ocurrió un error');
-    });
+    this._http.postRolData(name, description);
+    alert('Rol guardado');
+    window.location.reload();
   }
 
   // Entrada: ninguna
   // Función: muestra pop que indica la edición del elemento
   // Salida: mensaje informativo
   Editar(name: string, description: string, dniEmployee: number){
+    this._http.putRolData(name, description);
     alert('Rol editada');
   }
 

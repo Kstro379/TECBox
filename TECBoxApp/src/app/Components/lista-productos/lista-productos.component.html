@@ -1,0 +1,114 @@
+<!-- Header para cualquiera de las vistas -->
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header">
+          <h1 class="text-center" id="pageName">{{ pageName }}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de los empleados en la sucursal -->
+<div class="container">
+    <!-- Encabezado de la tabla -->
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="col-md-2">
+            <button type="button" class="btn" onclick="location.href=''">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMrdnsfFgbp8dHFH5OcCaaFnVg4CEmabhtppXvwBz8B92OP9I3&usqp=CAU" alt="return-button" width="22" />
+            </button>
+          </div>
+          <!--Label de fechas -->
+          <div class="form-group col-md-3">
+            <label></label>
+            <input
+              required
+              ngModel
+              type="date"
+              name="startDate"
+              #startDate="ngModel"
+              max="3000-12-31"
+              min="1000-01-01"
+              class="form-control"
+              id="startDate"
+            />
+            <div class="alert alert-danger" *ngIf="startDate.touched && !startDate.valid">
+              Debe ingresar una fecha válida.
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label></label>
+            <input
+              required
+              ngModel
+              type="date"
+              name="finalDate"
+              #finalDate="ngModel"
+              min="1000-01-01"
+              max="3000-12-31"
+              class="form-control"
+              id="finalDate"
+            />
+            <div class="alert alert-danger" *ngIf="finalDate.touched && !finalDate.valid">
+              Debe ingresar una fecha válida.
+            </div>
+          </div>
+  
+          <div class="col-md-2" *ngIf="startDate.touched && finalDate.valid">
+            <button class="btn btn-success" id="button1" type="submit" (click)="mostrar()"><i class="fa fa-search"></i>Buscar</button>
+          </div>
+          <div class="col-md-2" *ngIf="startDate.touched && finalDate.valid">
+            <button type="submit" class="btn btn-info" (click)="print()">Imprimir</button>
+          </div>
+        </nav>
+      </div>
+      <!--Columna de alerta-->
+      <div class="alert alert-warning col-md-12" *ngIf="warning">
+        Debe de especificar un rango de fechas para mostrar los productos
+        <button class="btn btn-warning" (click)="rigth()">De acuerdo</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Tabla de emplados de la sucursal, aún por finalizar -->
+        <table class="table table-hover" data-sort-order="desc" *ngIf="!tabla">
+          <thead>
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let venta of ventas">
+              <td
+                class="align-middle"
+                *ngIf="
+                  convertDate(venta.sell_data) >= convertDate(startDate.control.value) &&
+                  convertDate(finalDate.control.value) >= convertDate(venta.sell_data)
+              ">
+                {{ venta.code }}
+              </td>
+              <td class="align-middle" 
+              *ngIf="
+                  convertDate(venta.sell_data) >= convertDate(startDate.control.value) &&
+                  convertDate(finalDate.control.value) >= convertDate(venta.sell_data) 
+                ">{{ venta.name}}</td>
+              <td class="align-middle" 
+              *ngIf="
+                  convertDate(venta.sell_data) >= convertDate(startDate.control.value) &&
+                  convertDate(finalDate.control.value) >= convertDate(venta.sell_data) 
+                ">{{ venta.quantity }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

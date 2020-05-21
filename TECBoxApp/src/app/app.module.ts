@@ -11,6 +11,7 @@ import { GestionRolesComponent } from './Components/gestion-roles/gestion-roles.
 import { DataService } from './Components/gestion-roles/data.service';
 import { ListaRepartoComponent } from './Components/lista-reparto/lista-reparto.component';
 import { ListaEntregaComponent} from './Components/lista-entrega/lista-entrega.component';
+import { ListaProductosComponent } from './Components/lista-productos/lista-productos.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ListaEntregaComponent} from './Components/lista-entrega/lista-entrega.c
     HomeAdministracionComponent,
     GestionRolesComponent,
     ListaRepartoComponent,
-    ListaEntregaComponent
+    ListaEntregaComponent,
+    ListaProductosComponent
 
   ],
   imports: [

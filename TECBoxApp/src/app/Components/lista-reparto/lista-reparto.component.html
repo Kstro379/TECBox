@@ -1,4 +1,3 @@
-
 <!-- Header para cualquiera de las vistas -->
 <div class="container mt-4">
   <div class="row">
@@ -23,19 +22,25 @@
       <nav class="navbar navbar-dark bg-dark">
         <div class="col-md-2">
           <button type="button" class="btn" onclick="location.href=''">
-            <img src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" alt="return-button" width="22" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMrdnsfFgbp8dHFH5OcCaaFnVg4CEmabhtppXvwBz8B92OP9I3&usqp=CAU" alt="return-button" width="22" />
           </button>
         </div>
         <div class="clearfix float-right"></div>
         <div class="clearfix float-right">
           <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rutas
-            <span class="caret"></span>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+              Rutas
+              <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li class="dropdown-item" *ngFor="let ruta of rutas"><button class="dropdown-item" (click)="search(ruta.id)" type="button">{{ruta.name}}</button></li>
+              <li class="dropdown-item" *ngFor="let ruta of rutas">
+                <button class="dropdown-item" (click)="search(ruta.id)" type="button">{{ ruta.name }}</button>
+              </li>
             </ul>
-          </div> 
+          </div>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-info" (click)="print()">Imprimir</button>
         </div>
       </nav>
     </div>
@@ -57,9 +62,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let paquete of paquetes">
-        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{paquete.tracking_Id}}</td>
-        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{paquete.description}}</td>
-        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{paquete.district}}</td>
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.tracking_Id }}</td>
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.description }}</td>
+        <td class="align-middle" *ngIf="paquete.id_Route === ruta && paquete.status === status">{{ paquete.district }}</td>
       </tr>
     </tbody>
   </table>

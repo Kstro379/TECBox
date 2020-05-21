@@ -1,5 +1,4 @@
 export interface Package{
-    [x: string]: any;
     tracking_Id: number;
     status: string;
     description: string;

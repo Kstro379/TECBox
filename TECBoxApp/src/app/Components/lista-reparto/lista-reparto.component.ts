@@ -24,21 +24,15 @@ export class ListaRepartoComponent implements OnInit {
   selectedBranch: string;
   selectedBranchId: string;
 
-  // Entrada: nombre de los empleados y id
-  // Función: nombra el encabezado de a pagina, la sucursal, cambia le boolenao de la vista
-  // Salida: ninguna
-  selectBranch(name: string, id: string) {
-    this.pageName = 'Planilla de  ' + name;
-    this.sucursal = name;
-    this.selectedBranch = name;
-    this.selectedBranchId = id;
-  }
-
   // Entrada: ninguna
   // Función: cambia el booleano del warning
   // Salida: ningina
   rigth() {
     this.warning = false;
+  }
+
+  print() {
+    window.print();
   }
 
   search(rutaId: number) {

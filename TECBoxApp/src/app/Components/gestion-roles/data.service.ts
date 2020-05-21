@@ -21,7 +21,11 @@ export class DataService {
   // Salida: la información de roles
   postRolData(name: string, description: string) {
     console.log('El valor de header es:');
-    return this.httpClient.post('https://localhost:44395/api/Role', {name, description});
+    this.httpClient.post('https://localhost:44395/api/Role', {name, description});
+  }
+
+  putRolData(name: string, description: string) {
+    this.httpClient.put('https://localhost:44395/api/Role', {name, description});
   }
 
   deleteRolData(name: string) {
