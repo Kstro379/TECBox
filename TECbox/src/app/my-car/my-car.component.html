@@ -12,10 +12,15 @@
     <br>
     <h1>Welcome</h1>
     <br>
+    <button (click)="actualizar()">
+        Actulizar
+    </button>
+    <br>
     <br>
     <div class="row">
         <div class="col-4 producto" *ngFor="let product of products">
-            <br><p>Nombre del producto:<br> <abbr title='{{product.descripcion}}'>{{product.nombre}}</abbr></p><br><p>Precio:<br>{{product.precio}}</p><br>
+            <br><p>Nombre del producto:<br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
+            <button (click)="del(product.code)">Eliminar</button>
         </div>
     </div>
     <br>

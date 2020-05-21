@@ -1,14 +1,6 @@
 <div class="container">
-    <div class="row fixed-top" style="background-color: #54ec7a">
-        <div class="col-1">LOGO</div>
-        <div class="col-6"></div>
-        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
-        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
-        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
-        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
-        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
-    </div>
     <br>
+    <h1>Bienvenido nuevo cliente</h1>
     <div class="row">
         <div class="col-12">
             <br>
@@ -20,7 +12,9 @@
                 <p>Apellidos</p>
                 <input type="text" name="last" [(ngModel)]="user.last_Name">
                 <br>
-                <p>Dni: {{user.dni}}</p>
+                <p>Dni</p>
+                <input type="text" name="dni" [(ngModel)]="user.dni">
+                <br>
                 <p>Correo electrónico</p>
                 <input type="text" name="correo" [(ngModel)]="user.email">
                 <br>
@@ -51,7 +45,7 @@
                 <input type="text" name="senas" [(ngModel)]="user.address">
                 <br><br><br>
                 <button>
-                  Actualizar
+                  Crear Nuevo Usuario
                 </button>
                 <br>
               </form>
