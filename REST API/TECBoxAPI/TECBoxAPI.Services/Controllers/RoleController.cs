@@ -81,7 +81,7 @@ namespace TECBoxAPI.Services.Controllers
             var listRoles = new List<Role>()
             {
                new Role{Name="Administrador",Description="Engardado de administrar un departamento", Dni_Employee = new int[] {27840876} },
-               new Role{Name="Repartidor",Description="Encargado de entregar los paquetes", Dni_Employee = new int[] {506780345, 401580278} },
+               new Role{Name="Repartidor",Description="Encargado de entregar los paquetes", Dni_Employee = new int[] {506780345, 401580278 } },
                new Role{Name="Bodeguero",Description="Encargado de gestionar los paquetes y productos", Dni_Employee = new int[] { } }
             };
 
