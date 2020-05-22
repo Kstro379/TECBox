@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TECBOX Package</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary" padding>
+  <!-- List of Input Items -->
+  <ion-item *ngFor="let package of packages" >
+    <ion-list>
+      <ion-label> Tracking Id: {{package.Tracking_Id}}</ion-label>
+      <ion-select placeholder="{{package.Status}}" (ionChange)="actualizar(name,package.Tracking_Id);">
+        <ion-select-option name="Entregado al cliente">Entregado al cliente</ion-select-option>
+        <ion-select-option name="Intento fallido">Intento fallido</ion-select-option>
+        <ion-select-option name="Devuelto a sucursal">Devuelto a sucursal</ion-select-option>
+      </ion-select>
+    </ion-list>
+  </ion-item>
+
+</ion-content>

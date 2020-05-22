@@ -1,0 +1,8 @@
+{
+  "name": "TECbox",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
