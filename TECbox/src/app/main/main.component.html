@@ -1,33 +1,60 @@
 <div class="container">
-    <div class="row">
-      <div class="col-8 vision">
-        Logo
-        <br>
-        <br>
-        <br>
-        <h2>Un titulo</h2>
-        <p>Un texto que hable de quienes somos y lo que hacemos</p>
-      </div>
-      <div class="col-4 inicio">
-        <form (submit)="confirm(userName, userPass)">
-          <br>
-          <p>Username</p>
-          <input type="text" #userName>
-          <br>
-          <br>
-          <br>
-          <p>Passward</p>
-          <input type="text" #userPass>
-          <br><br><br>
-          <button class="bot">
-            Iniciar
-          </button>
-          <br>
-        </form>
-      </div>
-      <button class="bot" [routerLink]="['/newUser']">
-        Crear cuenta
-      </button>
+  <div class="row">
+    <div class="col-6 vision">
+      <img src="assets/logo.PNG"
+      width="400"
+      >
+      <br />
+      <br />
+      <br />
+      <h2>Visitenos</h2>
+      <p text-center>Somos la tienda virtual más grande del país</p>
     </div>
+    <div class="col-6 inicio">
+      <link
+        href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css"
+      />
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img
+              src="https://imageog.flaticon.com/icons/png/512/295/295128.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF"
+              id="icon"
+              alt="User Icon"
+              width="22"
+            />
+          </div>
+
+          <!-- Login Form -->
+          <form (submit)="confirm(userName, userPass)">
+            <input
+              id="login"
+              class="fadeIn second"
+              name="login"
+              placeholder="login"
+              type="text" #userName
+            />
+            <input
+              id="password"
+              class="fadeIn third"
+              name="login"
+              placeholder="password"
+              type="text" #userPass
+            />
+            <input type="submit" class="fadeIn fourth bot" value="Log In" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="fadeIn fourth bot" value="Crear Cuenta" [routerLink]="['/newUser']" />
   </div>
-  
+</div>

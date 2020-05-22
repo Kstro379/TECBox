@@ -10,17 +10,26 @@ import { AppComponent } from '../app.component';
 })
 export class ProfileComponent implements OnInit {
 
-  
+  // Guarda los datos del usuario en sesion.
+  user;
 
+  /**
+   * Constructor
+   * @param http: Api
+   */
   constructor(private http:DataService) {
    }
 
+   /**
+    * ngOnInit: Trae la data.
+    */
   ngOnInit(): void {
     this.http.getUser(AppComponent.get().toString()).subscribe(http => this.user=http);
   }
 
-  user;
-
+  /**
+   * Actualiza la informacion del usuario.
+   */
   actualizar(){
     return false;
   }

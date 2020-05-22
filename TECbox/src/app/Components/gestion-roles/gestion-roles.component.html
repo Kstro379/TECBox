@@ -1,0 +1,293 @@
+<!-- Barra principal de navegación -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="administracion">TECBox</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Buscar"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-info my-2 my-sm-0"
+        type="submit"
+        routerLink="/login"
+        routerLinkActive="active"
+      >
+        Buscar
+      </button>
+    </form>
+  </div>
+</nav>
+
+
+<div class="container">
+  <!-- Header para cualquiera de las vistas -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="page-header">
+          <h1 class="text-center">Gestión de roles</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!--Tabla-->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rol of roles">
+        <th scope="row">1</th>
+        <td>{{ rol.name }}</td>
+        <td>{{ rol.description }}</td>
+        <td class="align-right">
+          <button
+            type="button"
+            class="btn"
+            data-toggle="modal"
+            data-target="#editarModal"
+          >
+            <img
+              src="https://image.flaticon.com/icons/svg/1159/1159633.svg"
+              alt="add-button"
+              width="30"
+            />
+          </button>
+          <button (click)="Eliminar(rol.name)" type="button" class="btn">
+            <img
+              src="https://png.pngtree.com/svg/20170620/35569a229c.svg"
+              alt="add-button"
+              width="35"
+            />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Button trigger modal -->
+  <button
+    type="button"
+    class="btn"
+    data-toggle="modal"
+    data-target="#agregarModal"
+  >
+    <img
+      src="https://image.flaticon.com/icons/svg/1665/1665578.svg"
+      alt="add-button"
+      width="30"
+    />
+  </button>
+
+  <!-- Modal Crear Rol -->
+  <div
+    class="modal fade"
+    id="agregarModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="agregarModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="agregarModalLabel">Nuevo Rol</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <!--Agregar-->
+          <div>
+            <div class="form-group">
+              <label for="NombreRol">Nombre del rol</label>
+              <input
+                required
+                ngModel
+                name="addNombreRol"
+                #addNombreRol="ngModel"
+                type="text"
+                class="form-control"
+                id="NombreRol"
+                placeholder="Ingresar rol"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="addNombreRol.touched && !addNombreRol.valid"
+              >
+                Debe ingresar un rol válido.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Descripcion">Descripción</label>
+              <textarea
+                required
+                ngModel
+                name="addDescripcion"
+                #addDescripcion="ngModel"
+                class="form-control"
+                id="Descripcion"
+                placeholder="Ingresar descripción"
+              ></textarea>
+              <div
+                class="alert alert-danger"
+                *ngIf="addDescripcion.touched && !addDescripcion.valid"
+              >
+                Debe ingresar una descripción válida.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cerrar
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-primary bg-success"
+            data-dismiss="modal"
+            [disabled]="!(addNombreRol.valid && addDescripcion.valid)"
+            (click)="
+              Agregar(
+                addNombreRol.control?.value,
+                addDescripcion.control?.value
+              )
+            "
+            type="button"
+            class="btn btn-primary"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Editar Rol -->
+  <div
+    class="modal fade"
+    id="editarModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="agregarModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="agregarModalLabel">Editar Rol</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <!--Agregar-->
+          <div>
+            <div class="form-group">
+              <label for="NombreRol2">Nombre del rol</label>
+              <input
+                required
+                ngModel
+                name="addNombreRol2"
+                #addNombreRol2="ngModel"
+                type="text"
+                class="form-control"
+                id="NombreRol2"
+                placeholder="Ingresar rol"
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="addNombreRol2.touched && !addNombreRol2.valid"
+              >
+                Debe ingresar un rol válido.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Descripcion2">Descripción</label>
+              <textarea
+                required
+                ngModel
+                name="addDescripcion2"
+                #addDescripcion2="ngModel"
+                class="form-control"
+                id="Descripcion2"
+                placeholder="Ingresar descripción"
+                
+              ></textarea>
+              <div
+                class="alert alert-danger"
+                *ngIf="addDescripcion2.touched && !addDescripcion2.valid"
+              >
+                Debe ingresar una descripción válida.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cerrar
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-primary bg-success"
+            data-dismiss="modal"
+            [disabled]="!(addNombreRol2.valid && addDescripcion2.valid)"
+            (click)="
+              Agregar(
+                addNombreRol2.control?.value,
+                addDescripcion2.control?.value
+              )
+            "
+            type="button"
+            class="btn btn-primary"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

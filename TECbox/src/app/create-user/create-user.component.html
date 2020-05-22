@@ -1,54 +1,139 @@
-<div class="container">
-    <br>
-    <h1>Bienvenido nuevo cliente</h1>
-    <div class="row">
-        <div class="col-12">
-            <br>
-            <form (submit)="actualizar()">
-                <br>
-                <p>Nombre</p>
-                <input type="text" name="name" [(ngModel)]="user.name">
-                <br>
-                <p>Apellidos</p>
-                <input type="text" name="last" [(ngModel)]="user.last_Name">
-                <br>
-                <p>Dni</p>
-                <input type="text" name="dni" [(ngModel)]="user.dni">
-                <br>
-                <p>Correo electrónico</p>
-                <input type="text" name="correo" [(ngModel)]="user.email">
-                <br>
-                <p>Casillero</p>
-                <input type="text" name="casillero" [(ngModel)]="user.locker">
-                <br>
-                <p>Telefono Celular</p>
-                <input type="text" name="celular" [(ngModel)]="user.phoneNumber">
-                <br>
-                <p>Telefono de la casa</p>
-                <input type="text" name="casa" [(ngModel)]="user.house_PhoneNumber">
-                <br>
-                <p>Username</p>
-                <input type="text" name="user" [(ngModel)]="user.user">
-                <br>
-                <p>Passward</p>
-                <input type="text"name="pass" [(ngModel)]="user.password">
-                <br>
-                <br>
-                <p>Direccion de entrega</p>
-                <p>Provincia</p>
-                <input type="text" name="provincia" [(ngModel)]="user.province">
-                <p>Canton</p>
-                <input type="text" name="canton" [(ngModel)]="user.canton">
-                <p>Distrito</p>
-                <input type="text" name="distrito" [(ngModel)]="user.district">
-                <p>Otras señas</p>
-                <input type="text" name="senas" [(ngModel)]="user.address">
-                <br><br><br>
-                <button>
-                  Crear Nuevo Usuario
-                </button>
-                <br>
-              </form>
-        </div>
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Bienvenido</h3>
+      <p>El registro tomara apenas unos minutos</p>
     </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h3 class="register-heading">Creación de Usaurio</h3>
+          <div class="row register-form">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nombre *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Apellidos *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="user"
+                  placeholder="UserName *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Cédula *"
+                  value=""
+                />
+              </div>
+              <div class="form-group"></div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Correo electrónico *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  minlength="10"
+                  maxlength="10"
+                  name="txtEmpPhone"
+                  class="form-control"
+                  placeholder="Télefono Celuar *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  minlength="10"
+                  maxlength="10"
+                  name="txtEmpPhone"
+                  class="form-control"
+                  placeholder="Telefono de casa"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Casillero *"
+                  value=""
+                />
+              </div>
+              <div class="form-group">
+                <p>Provincia</p>
+                
+              </div>
+              <div class="form-group">
+                <p>Cantón</p>
+                <select class="custom-select" title="Canton">
+                  <option>Mustard</option>
+                  <option>Ketchup</option>
+                  <option>Relish</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <p>Distrito</p>
+                <select class="custom-select" title="Distrito">
+                  <option>Mustard</option>
+                  <option>Ketchup</option>
+                  <option>Relish</option>
+                </select>
+              </div>
+              <input type="submit" class="btnRegister" value="Register" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+

@@ -1,25 +1,73 @@
-<div class="container">
-    <div class="row fixed-top" style="background-color: #54ec7a">
-        <div class="col-1">LOGO</div>
-        <div class="col-6"></div>
-        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
-        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
-        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
-        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
-        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
-    </div>
-    <br>
-    <br>
-    <form (submit)="rastrear(paqueteId)">
-        <p>Ingrese el ID de su paquete</p>
-        <input type="text" #paqueteId>
-        <br>
-        <br>
-        <button>
-            Actualizar
+<!-- Barra principal de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">TECBox</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="col-4"></div>
+    <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+    <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+    <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+    <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+    <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-info my-2 my-sm-0"
+          type="submit"
+          routerLink="/login"
+          routerLinkActive="active"
+        >
+          Buscar
         </button>
-    </form>
+      </form>
+    </div>
+  </nav>
+
+<div class="container">
+    
     <br>
-    <p>Estado:</p>
-    <h2>{{estado}}</h2>
+    <br>
+    <h1 class="text-center text-info" >Rastreo de Productos</h1>
+    <br>
+    <br>
+    <div class="text-center">
+        <form (submit)="rastrear(paqueteId)">
+            <h5>Ingrese el ID de su paquete</h5>
+            <br>
+            <div class="col-mg-2">
+                <input type="number" #paqueteId
+                required
+                ngModel
+                name="rasteo"
+                #rastreo="ngModel"
+                placeholder="Ingresar código">
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-success" [disabled]="!(rastreo.valid)">
+                Actualizar
+            </button>
+        </form>
+        <br>
+        <h5>Estado:</h5>
+        <h2>{{estado}}</h2>
+    </div>
 </div>

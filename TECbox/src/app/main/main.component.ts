@@ -11,17 +11,34 @@ import { AppComponent } from '../app.component';
 })
 export class MainComponent implements OnInit {
 
+  // Lista de los clientes.
+  clients;
+  // Lista de los empleados
+  employees;
+  // Lista de los roles.
+  roles;
+
+  /**
+   * Constructor
+   * @param router: Paginas
+   * @param data: Api
+   */
   constructor(private router: Router, private data: DataService) { }
 
+   /**
+    * ngOnInit: Trae la data.
+    */
   ngOnInit(): void {
     this.data.login().subscribe(data => this.clients=data);
     this.data.loginEmployee().subscribe(data => this.employees=data);
     this.data.loginRole().subscribe(data => this.roles=data);
   }
-  clients;
-  employees;
-  roles;
 
+  /**
+   * Verifica si el userName y el password son correctos
+   * @param userName: Username
+   * @param userPass: Contraseña
+   */
   confirm(userName, userPass){
     for (let i = 0; i < this.clients.length; i++) {
       if (this.clients[i].user == userName.value && this.clients[i].password ==userPass.value) {
@@ -33,6 +50,7 @@ export class MainComponent implements OnInit {
         for (let x = 0; x < this.roles.length; x++) {
           for (let index = 0; index < this.roles[x].dni_Employee.length; index++) {
             if(this.roles[x].dni_Employee[index]==this.employees[i].dni){
+              this.router.navigate(['/administracion']);
               alert(this.roles[x].name);
               return false;
             }

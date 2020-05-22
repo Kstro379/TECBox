@@ -10,20 +10,33 @@ import { AppComponent } from '../app.component';
 })
 export class MyCarComponent implements OnInit {
 
+  // Precio total de la compra.
   total = 0;
+  // Lista de todos los productos.
   products_total;
+  // ID de los productos que se desean comprar.
   id_products;
-  
+  // Lista de los productos que se desean comprar.
   products=[];
 
+  /**
+   * Constructor
+   * @param http: Api
+   */
   constructor(private http:DataService) {
   }
 
+   /**
+    * ngOnInit: Trae la data.
+    */
   ngOnInit(): void {
     this.http.productos().subscribe(data => this.products_total=data);
     this.id_products = AppComponent.getId();
   }
 
+  /**
+   * Actualiza los productos a comprar y el precio total de la compra.
+   */
   actualizar(){
     if(this.id_products.length != 0){
       for (let i = 0; i < this.id_products.length; i++) {
@@ -41,6 +54,10 @@ export class MyCarComponent implements OnInit {
     this.id_products=[];
   }
 
+  /**
+   * Elimina un producto de la lista de productos que se desea comprar.
+   * @param num: ID del producto a eliminar.
+   */
   del(num){
     for (let y = 0; y < this.products.length; y++) {
       if(this.products[y].code == num){

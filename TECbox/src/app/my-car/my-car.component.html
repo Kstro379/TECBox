@@ -1,31 +1,77 @@
+<!-- Barra principal de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">TECBox</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="col-4"></div>
+    <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
+    <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
+    <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
+    <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
+    <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Buscar"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-info my-2 my-sm-0"
+          type="submit"
+          routerLink="/login"
+          routerLinkActive="active"
+        >
+          Buscar
+        </button>
+      </form>
+    </div>
+  </nav>
+
 <div class="container">
-    <div class="row fixed-top" style="background-color: #54ec7a">
-        <div class="col-1">LOGO</div>
-        <div class="col-6"></div>
-        <div class="col-1"><a [routerLink]="['/client']">Tienda</a></div>
-        <div class="col-1"><a [routerLink]="['/rastreo']">Rastreo</a></div>
-        <div class="col-1"><a [routerLink]="['/my_car']">Mi Carrito</a></div>
-        <div class="col-1"><a [routerLink]="['/profile']">Perfil</a></div>
-        <div class="col-1"><a [routerLink]="['/']">Fin</a></div>
+    <br>
+    <br>
+    <h1 class="text-center text-info" >Carrito de compras</h1>
+    <br>
+    <div class="text-center">
+        <button class="btn btn-success" (click)="actualizar()">
+            Actulizar
+        </button>
     </div>
     <br>
     <br>
-    <h1>Welcome</h1>
-    <br>
-    <button (click)="actualizar()">
-        Actulizar
-    </button>
-    <br>
-    <br>
     <div class="row">
-        <div class="col-4 producto" *ngFor="let product of products">
-            <br><p>Nombre del producto:<br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
-            <button (click)="del(product.code)">Eliminar</button>
+        <div class="card-body card-body-cascade text-center col-4 producto" *ngFor="let product of products">
+            <!-- Title -->
+            <h4 class="card-title">
+              <strong>Nombre del producto</strong>
+            </h4>
+            <!-- Text -->
+            <br><p><br> <abbr title='{{product.description}}'>{{product.name}}</abbr></p><br><p>Precio:<br>{{product.price}}</p><br>
+            <button class="btn btn-danger" (click)="del(product.code)">Eliminar</button>
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-6 float-left">Precio final</div>
-        <div class="col-6 float-right">{{total}}</div>
+        <div class="col-6 float-left">
+            <h4>Precio final</h4>
+        </div>
+        <div class="col-6 float-right">
+            <h4>{{total}}</h4>
+        </div>
+        <div id="header_line"></div>
     </div>    
 </div>

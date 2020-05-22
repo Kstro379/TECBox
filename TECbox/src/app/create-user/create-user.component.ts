@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 
+
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
@@ -9,15 +10,45 @@ import { DataService } from '../data.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor(private http:DataService) { }
+  // Lista de las provincias.
+  provincias = [];
+  // Numero de provincias.
+  numProvincia;
+  // Lista de cantones.
+  cantones;
+  // Numero de cantones.
+  numCanton;
+  // Lista de distritos.
+  distritos;
 
+  /**
+   * Constructor
+   * @param _http: Api
+   */
+  constructor(private _http:DataService) { }
+
+  /**
+   * Trae la data.
+   */
   ngOnInit(): void {
+    this._http.provincias().subscribe(data => {
+      this.provincias.push
+      (data);
+      console.log(this.provincias);
+    });
   }
 
-  user = {"dni":0,"user":"","name":"","last_Name":"","phoneNumber":0,"email":"","password":"","house_PhoneNumber":0,"locker":0,"district":"","canton":"","province":"","address":""};
-
-  actualizar(){
+  /**
+   * Crea el usuario.
+   */
+  actualizar() {
     return false;
   }
+
+  /**
+   * Buscar.
+   * @param i: ID a buscar.
+   */
+  search(i: number) {}
 
 }
